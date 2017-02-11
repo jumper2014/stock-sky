@@ -41,7 +41,7 @@ def get_stock_data(codes):
 
 
 if __name__ == '__main__':
-    parser = OptionParser(description="Query the stock's value.", usage="%prog [-c] [-s] [-t]", version="%prog 1.0")
+    parser = OptionParser(description="Query the stock's value.", usage="%prog [-c] [-s]", version="%prog 1.0")
     parser.add_option('-c', '--stock-code', dest='codes',
                       help="the stock's code that you want to query.")
     parser.add_option('-s', '--sleep-time', dest='sleep_time', default=6, type="int",
