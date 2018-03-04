@@ -22,12 +22,13 @@
 
 
 ### 开发历史
-- tushare 下载数据的例子
+- tushare 批量下载数据
+- 数据存储到csv
 - 从构建MongoDB数据结构
 - 读写MongoDB的库 
-- 数据存储到MongoDB
 - 构建测试程序
-- done - Mac OS 安装MongoDB 
-- done - PyCharm 3.x环境
+- done - 日数据存储到MySQL
+- done - Mac OS 安装MySQL
+- done - Python 2.7环境
 - done - PipEnv结合PyCharm
 - done - 安装第三方库和依赖

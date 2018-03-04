@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
+# author: zengyuetian
 
 from sqlalchemy import create_engine, VARCHAR
-import numpy as np
 import tushare as ts
 from libs.date import now
 from libs.db.mysqler import *
-import os
 
 if __name__ == '__main__':
     # stock_code = '600846'
