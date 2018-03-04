@@ -17,8 +17,9 @@
 
 
 ### 获取股票数据
-- python main.py : 获取股票数据存储到MySQL
-- python misc/tool/stock_code_spider/stock_code_spider.py: 抓取股票代码和名称，写入data.csv
+- python libs/data/mysql_writer.py : 获取股票数据存储到MySQL
+- python libs/data/csv_writer.py : 获取股票数据存储到MySQL
+- python misc/tool/stock_code_spider/stock_code_spider.py: 抓取股票代码和名称，写入同目录data.csv
 - python kline.py: 生成股票K线图
 
 ### 筛选股票
@@ -30,11 +31,11 @@
 ### 开发计划
 - todo: 通过线程池批量下载历史数据
 - todo: 展示均线
-- todo: 数据存储到csv
 - todo: 从构建MongoDB数据结构
 - todo: 读写MongoDB的库 
 - todo: 构建测试程序
-
+- -----------------
+- done: 数据存储到csv
 - done: 展示K线图
 - done: 展示成交量图
 - done: 股票代码和名称获取
