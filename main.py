@@ -2,14 +2,56 @@
 # coding=utf-8
 # author: zengyuetian
 
+import optparse
+import threadpool
 from libs.date import now
-from libs.data.mysql_writer import *
-from libs.data.csv_writer import *
+from libs.data.mysql_writer import save_his_to_mysql
+from libs.data.csv_writer import save_his_to_csv
+from libs.db.stock_code import get_stock_codes
 
 if __name__ == '__main__':
-    # stock_code = '600846'
-    stock_code = '000002'
-    start = now()
-    # df = ts.get_hist_data(stock_code, start='2018-02-26')
-    save_his_to_csv(stock_code, start='2010-01-01')
-    print("Time cost {0}".format(now() - start))
+
+    start_time = now()
+
+    stocks = get_stock_codes()
+    # stocks = ['000001', '000002']
+
+    parser = optparse.OptionParser(
+        usage="%prog [optons] [<arg1> <arg2> ...]",
+        version="1.0"
+    )
+    parser.add_option('-t', '--target', dest='target', type='string', default='csv', help='csv/mysql')
+    parser.add_option('-s', '--start', dest='start', type='string', default=None, help='start date')
+
+    (options, args) = parser.parse_args()
+    target = options.target
+    start_date = options.start
+
+    if target == 'csv':
+        target_func = save_his_to_csv
+    elif target == 'mysql':
+        target_func = save_his_to_mysql
+    else:
+        print('wrong target!')
+        exit(0)
+
+    args = list()
+    if start_date is not None:
+        args = zip(stocks, [start_date for i in range(len(stocks))])
+    else:
+        args = stocks
+
+    # 针对每个板块写一个文件,启动一个线程来操作
+    # 使用线程池来做
+    pool_size = 10
+    pool = threadpool.ThreadPool(pool_size)
+    requests = threadpool.makeRequests(target_func, args)
+    [pool.putRequest(req) for req in requests]
+    pool.wait()
+    # 完成后退出
+    pool.dismissWorkers(pool_size, do_join=True)
+
+    # 计时结束
+    end_time = now()
+    print('Total save {0} stocks'.format(len(stocks)))
+    print('Time is: {0}'.format(end_time - start_time))

@@ -14,8 +14,9 @@ def save_his_to_csv(stock_code, start=None):
         df.to_csv(filename, mode='w', header=None)
     else:
         df.to_csv(filename)
+    print('done for {0}'.format(stock_code))
 
 
 if __name__ == '__main__':
-    stock_code = '000002'
-    save_his_to_csv(stock_code, start='2018-01-01')
+    stock_code = '000003'
+    save_his_to_csv(stock_code)
