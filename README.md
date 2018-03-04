@@ -4,10 +4,13 @@
 
 
 ### 安装和依赖
-- Python 3.6
+- Python 2.7
 - PipEnv(可选)
 - tushare
 - lxml, pandas, requests, bs4 (支持tushare, 建议从pipenv命令行安装)
+- export PATH=$PATH:/usr/local/mysql/bin; pip install mysql-python
+- configparser
+- 建议使用清华的源 pip install <pkg> -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 

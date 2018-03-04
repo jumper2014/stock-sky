@@ -5,14 +5,14 @@ verify_ssl = true
 name = "pypi"
 
 
-[packages]
-
-requests = "*"
-"bs4" = "*"
-tushare = "*"
-pandas = "*"
-lxml = "*"
-
-
 [dev-packages]
 
+
+
+[packages]
+
+
+
+[requires]
+
+python_version = "2.7"
