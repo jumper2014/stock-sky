@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # print(df['date'].dtypes)
     print(df['open'])
 
-    # exit(0)
+    # save to csv file
     # filename = 'hist_data_' + stock_code + '.csv'
     # if os.path.exists(filename):
     #     df.to_csv(filename, mode='a', header=None)
@@ -30,5 +30,3 @@ if __name__ == '__main__':
     df.to_sql('hist_data_'+stock_code, engine, if_exists='replace', dtype={'date': VARCHAR(10)})
 
     print("Time cost {0}".format(now() - start))
-    # 追加数据到现有表
-    # df.to_sql('hist_data',engine,if_exists='append')
