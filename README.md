@@ -22,6 +22,12 @@
 - python misc/tool/stock_code_spider/stock_code_spider.py: 抓取股票代码和名称，写入同目录data.csv
 - python kline.py: 生成股票K线图
 
+### 如何使用
+- 抓取数据到MySQL: python main -t msql
+- 抓取数据到CSV: python main -t csv
+- 性能：500秒抓取4000只股票三年的数据
+
+
 ### 筛选股票
 - TODO
 
@@ -29,12 +35,12 @@
 
 
 ### 开发计划
-- todo: 通过线程池批量下载历史数据
 - todo: 展示均线
 - todo: 从构建MongoDB数据结构
 - todo: 读写MongoDB的库 
 - todo: 构建测试程序
 - -----------------
+- done: 通过线程池批量下载历史数据
 - done: 数据存储到csv
 - done: 展示K线图
 - done: 展示成交量图
