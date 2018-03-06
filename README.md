@@ -1,12 +1,13 @@
 # 股票天空
 - 获取股票数据
+- 存储到csv, MySQL数据库
 - 根据历史数据筛选股票
 
 
 ### 安装和依赖
 - MySQL数据库, 数据库名stock, 用户名密码为root/123456
 - Python 2.7
-- PipEnv(可选)
+- PipEnv(可选，建议安装，避免环境版本冲突和权限问题)
 - tushare
 - lxml, pandas, requests, bs4 (支持tushare, 建议从pipenv命令行安装)
 - export PATH=$PATH:/usr/local/mysql/bin; pip install mysql-python
@@ -25,7 +26,7 @@
 ### 如何使用
 - 抓取数据到MySQL: python main -t msql
 - 抓取数据到CSV: python main -t csv
-- 性能：500秒抓取4000只股票三年的数据
+- 性能：500秒抓取3500只股票三年的数据
 
 
 ### 筛选股票
@@ -41,6 +42,7 @@
 - todo: 构建测试程序
 - -----------------
 - done: 通过线程池批量下载历史数据
+- done: 使用从tushare获得的股票代码代替从东方财富网获得股票代码
 - done: 数据存储到csv
 - done: 展示K线图
 - done: 展示成交量图

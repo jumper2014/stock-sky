@@ -34,6 +34,7 @@ def get_root_dir_name():
 
 
 MISC_PATH = get_root_path() + "/misc"
+STOCK_CODE_FILE = MISC_PATH + '/tool/valid_stock/data.csv'
 
 
 ###############################
