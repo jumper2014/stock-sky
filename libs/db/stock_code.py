@@ -19,6 +19,17 @@ def get_stocks_info():
     return stocks_info
 
 
+def get_stocks():
+    stocks = dict()
+    with open(STOCK_CODE_FILE, mode='r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            name, code = line.split(',')
+            stocks[str(code)] = name
+            # print(code_info[0] + code_info[1])
+    return stocks
+
 def get_stock_codes():
     codes = list()
     with open(STOCK_CODE_FILE, mode='r') as f:
