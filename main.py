@@ -5,7 +5,7 @@
 import optparse
 import threadpool
 import pymongo
-from libs.date import now
+from libs.utility.date import now
 from libs.data.mysql_writer import save_his_to_mysql
 from libs.data.mongodb_writer import save_his_to_mongodb
 from libs.data.csv_writer import save_his_to_csv
