@@ -41,7 +41,8 @@
 - todo: 读写MongoDB的库 
 - todo: 构建测试程序
 - -----------------
-- done: 简单移动平均线选股
+- done: 简单移动平均线选股-从tushare接口
+- done: 简单移动平均线选股-从MySQL数据库
 - done: 通过线程池批量下载历史数据
 - done: 使用从tushare获得的股票代码代替从东方财富网获得股票代码
 - done: 数据存储到csv

@@ -19,5 +19,6 @@ def save_his_to_mysql(stock_code, engine, start=None):
 
 
 if __name__ == '__main__':
-    stock_code = '000002'
-    # save_his_to_mysql(stock_code, start='2018-01-01')
+    engine = create_engine(STOCK_ENGINE_STR)
+    stock_code = '603886'
+    save_his_to_mysql(stock_code, engine)

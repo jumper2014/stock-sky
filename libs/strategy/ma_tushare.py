@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 # author: zengyuetian
-# 移动平均线选股
+# 从tushare接口读取每支股票最近一段时间的数据
+# 判断5日，10日，30日均线的关系。
 
 
 import tushare as ts
